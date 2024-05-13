@@ -1,9 +1,44 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Image from "astro/components/Image.astro";
+import Layout from "../layouts/Layout.astro";
+import spacexLogo from "../assets/img/spacex 1.svg";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Hola Mundo</h1>
-	</main>
-</Layout>
+<Layout title="SpaceX Rocket Launches">
+  <div class="container max-w-screen-2xl mx-auto">
+    <header>
+      <picture class="max-w">
+        <Image
+          src={spacexLogo}
+          alt="SpaceX Rocket Launch"
+          class="block max-w-fit m-auto"
+        />
+      </picture>
+    </header>
+    <div class="py-6">
+      <h2 class="text-4xl font-bold tracking-wider">Launches</h2>
+    </div>
+    <main>
+      <div class="tabs">
+        <div class="tabs-header flex">
+          <button class="tab w-full max-w-44 px-4 py-5 border-b">All</button>
+          <button class="tab w-full max-w-44 px-4 py-5">Favourites</button>
+        </div>
+        <div class="tabs-content">
+          <div class="tab-content block py-10">
+            <p>Upcoming Launches</p>
+          </div>
+          <div class="tab-content hidden">
+            <p>Past Launches</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    header {
+      padding: 1rem;
+    }
+  </style></Layout
+>
